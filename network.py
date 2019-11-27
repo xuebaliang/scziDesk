@@ -133,7 +133,7 @@ class autoencoder(object):
                     feed_dict={
                         self.sf_layer: size_factor,
                         self.x: X,
-                        self.x_count: X})
+                        self.x_count: count_X})
                 self.Y_pred = np.argmin(dist, axis=1)
                 if np.sum(self.Y_pred != self.last_pred) / len(self.last_pred) < error:
                     break
