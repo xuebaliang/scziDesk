@@ -72,6 +72,7 @@ real_data_cluster<-function(i){
   select.out = selectGenes(data, DESCEND = FALSE, type = "log")
   select.genes = as.vector(select.out$select.genes)
   data = data[, colnames(data) %in% select.genes]
+  soup = SOUP(data, Ks = c(max(label) - min(label) + 1), type = "log")
   pred = as.vector(soup$major.labels[[1]])
   nmi=compare(label, pred, method = "nmi")
   ari=compare(label, pred, method = "adjusted.rand")
