@@ -56,7 +56,7 @@ real_data_cluster<-function(i){
     sc_cidr = scDissim(sc_cidr)
     sc_cidr = scPCA(sc_cidr,plotPC = FALSE)
     sc_cidr = nPC(sc_cidr)
-    sc_cidr = scCluster(sc_cidr)
+    sc_cidr = scCluster(sc_cidr, nCluster = max(label) - min(label) + 1)
     nmi = compare(label, sc_cidr@clusters, method = "nmi")
     ari = compare(label, sc_cidr@clusters, method = "adjusted.rand")
     return(c(ari,nmi))
