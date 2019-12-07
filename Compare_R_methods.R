@@ -76,7 +76,7 @@ real_data_cluster<-function(i){
   pred = as.vector(soup$major.labels[[1]])
   nmi=compare(label, pred, method = "nmi")
   ari=compare(label, pred, method = "adjusted.rand")
- 
+  return(c(ari,nmi))
   }
   
   
