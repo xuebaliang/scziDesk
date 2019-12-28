@@ -144,7 +144,7 @@ real_data_cluster<-function(i){
   print("begin SIMLR cluster")
   simlr_list = SIMLR_cluster_large(datacount, cell_label)
   print(simlr_list)
-  print("finish CIDR cluster")
+  print("finish SIMLR cluster")
   
   print("begin RaceID cluster")
   race_list = RaceID_cluster(datacount, cell_label)
