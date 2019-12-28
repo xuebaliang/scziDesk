@@ -27,8 +27,6 @@ real_data_cluster<-function(i){
   
   read_expr_mat_copy = function(file){
     fileinfor = H5Fopen(file)
-    
-    fileinfor =H5Fopen(data_path)
     exprs_handle = H5Oopen(fileinfor, "exprs")
     if (H5Iget_type(exprs_handle) == "H5I_GROUP"){
       mat = new("dgCMatrix", x = read_clean(h5read(exprs_handle, "data")),
