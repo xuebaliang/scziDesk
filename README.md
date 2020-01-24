@@ -23,7 +23,7 @@ We use the dataset “Bach” and ZINB distribution modelling to give an example
 
 python zidpkm.py --dataname "Bach"
 
-Then you will get the cluster result of Bach dataset using scziDesk method in ten random seed. The median values of Accuracy, ARI and NMI are 0.9046, 0.8738 and 0.8343, respectively. 
+Then you will get the cluster result of “Bach” dataset using scziDesk method in ten random seed. The median values of Accuracy, ARI and NMI are 0.9046, 0.8738 and 0.8343, respectively. 
 
 Help
 -----
