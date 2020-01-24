@@ -8,7 +8,9 @@ Architecture
 Requirement
 -----
 Python 3.6
+
 Tensorflow 1.14
+
 Keras 2.2
 
 Data availability
