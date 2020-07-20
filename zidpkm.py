@@ -2,7 +2,7 @@ from preprocess import *
 from network import *
 from utils import *
 import argparse
-from sklearn.metrics import adjusted_rand_score, adjusted_mutual_info_score
+from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
 
 def cluster_acc(y_true, y_pred):
@@ -65,10 +65,10 @@ if __name__ == "__main__":
         chencluster.funetrain(X, count_X, size_factor, args.batch_size, args.funetrain_epoch, args.update_epoch, args.error)
         kmeans_accuracy = np.around(cluster_acc(Y, chencluster.kmeans_pred), 5)
         kmeans_ARI = np.around(adjusted_rand_score(Y, chencluster.kmeans_pred), 5)
-        kmeans_NMI = np.around(adjusted_mutual_info_score(Y, chencluster.kmeans_pred), 5)
+        kmeans_NMI = np.around(normalized_mutual_info_score(Y, chencluster.kmeans_pred), 5)
         accuracy = np.around(cluster_acc(Y, chencluster.Y_pred), 5)
         ARI = np.around(adjusted_rand_score(Y, chencluster.Y_pred), 5)
-        NMI = np.around(adjusted_mutual_info_score(Y, chencluster.Y_pred), 5)
+        NMI = np.around(normalized_mutual_info_score(Y, chencluster.Y_pred), 5)
         result.append([args.dataname, kmeans_accuracy, kmeans_ARI, kmeans_NMI, accuracy, ARI, NMI])
 
     output = np.array(result)
